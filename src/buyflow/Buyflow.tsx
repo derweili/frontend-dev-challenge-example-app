@@ -2,19 +2,26 @@ import React, { useState } from 'react'
 import { Insurance } from '../config/Insurances'
 import AgeStep from './AgeStep'
 import EmailStep from './EmailStep'
+import LastnameStep from './LastnameStep'
 import SummaryStep from './SummaryStep'
 
 interface BuyflowProps {
   insurance: Insurance
 }
 
+export interface CollectedData {
+  age: number
+  email: string
+  lastname?: string
+}
+
 const Buyflow: React.FC<BuyflowProps> = (props) => {
   const { insurance } = props
 
   const [currentStep, setStep] = useState('email')
-  const [collectedData, updateData] = useState({
+  const [collectedData, updateData] = useState<CollectedData>({
     email: '',
-    age: 0,
+    age: 0
   })
   const getStepCallback = () => (field: string, value: any) => {
     updateData({ ...collectedData, [field]: value })
@@ -32,6 +39,8 @@ const Buyflow: React.FC<BuyflowProps> = (props) => {
         return <EmailStep cb={getStepCallback()} />
       case 'age':
         return <AgeStep cb={getStepCallback()} />
+      case 'lastname':
+        return <LastnameStep cb={getStepCallback()} />
       case 'summary':
         return <SummaryStep collectedData={collectedData} />
       default:
