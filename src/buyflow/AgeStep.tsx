@@ -6,9 +6,16 @@ interface AgeStepProps {
 
 const AgeStep: React.FC<AgeStepProps> = (props) => {
   const [age, setAge] = useState(0)
+
+  const onSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    e.stopPropagation()
+    props.cb('age', age)
+  }
+
   return (
     <>
-      <div>
+      <form onSubmit={onSubmit}>
         Age:{' '}
         <input
           type="number"
@@ -16,9 +23,14 @@ const AgeStep: React.FC<AgeStepProps> = (props) => {
             setAge(Number(value))
           }}
           value={age}
+          required
+          autoFocus
+          min="1"
         ></input>
-      </div>
-      <button onClick={() => props.cb('age', age)}>Next</button>
+        <button type="submit" onClick={() => props.cb('age', age)}>
+          Next
+        </button>
+      </form>
     </>
   )
 }
