@@ -12,7 +12,7 @@ test('should render App', () => {
 test('should render link to each insurance', () => {
   render(<App />)
 
-  insturances.forEach(insurance => {
+  insturances.forEach((insurance) => {
     const linkElement = screen.getByText(insurance.title)
     expect(linkElement).toBeInTheDocument()
   })
