@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { CollectedData } from './Buyflow'
 
 interface SummaryStepProps {
@@ -9,13 +8,14 @@ interface SummaryStepProps {
 const SummaryStep: React.FC<SummaryStepProps> = (props) => {
   return (
     <>
+      <h2>Summary:</h2>
       <div>Email: {props.collectedData.email}</div>
       <div>Age: {props.collectedData.age}</div>
       {props.collectedData.lastname && (
-        <div>Lastname: {props.collectedData.lastname}</div>
+        <div className="lastname">Lastname: {props.collectedData.lastname}</div>
       )}
       <div>
-        <Link to="/purchased=dev_ins">Purchase</Link>
+        <a href="/purchased=dev_ins">Purchase</a>
       </div>
     </>
   )
