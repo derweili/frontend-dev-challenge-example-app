@@ -25,7 +25,7 @@ const App = () => {
             <p>Welcome to Getsafe's Insurances:</p>
             {insturances.map((insurance) => (
               <p key={`insurance-link-${insurance.id}`}>
-                <Link to={`/buy/${insurance.name}`}>{insurance.title} !</Link>
+                <Link to={`/buy/${insurance.name}`}>{insurance.title}</Link>
               </p>
             ))}
           </Route>
