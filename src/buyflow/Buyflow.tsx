@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Insurance } from '../config/Insurances'
+import { Insurance } from '../config/insurances'
 import AgeStep from './AgeStep'
 import EmailStep from './EmailStep'
 import FirstnameStep from './FirstnameStep'

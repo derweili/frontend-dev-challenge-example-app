@@ -5,7 +5,7 @@ export interface Insurance {
   steps: string[]
 }
 
-const insturances: Insurance[] = [
+const insurances: Insurance[] = [
   {
     id: 1,
     title: 'Developer Insurance',
@@ -20,4 +20,4 @@ const insturances: Insurance[] = [
   },
 ]
 
-export default insturances
+export default insurances

@@ -2,8 +2,8 @@ import React from 'react'
 import logo from './logo.svg'
 import './App.css'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
-import Buyflow from './buyflow/Buyflow'
-import insturances from './config/Insurances'
+import insurances from './config/insurances'
+import BuyPage from './pages/BuyPage'
 
 const App = () => {
   return (
@@ -13,17 +13,16 @@ const App = () => {
           <img src={logo} className="App-logo" alt="logo" />
         </header>
         <Switch>
-          {insturances.map((insurance) => (
+          {insurances.map((insurance) => (
             <Route
-              path={`/buy/${insurance.name}`}
+              path={`/buy/:insuranceName`}
               key={`insurance-route-${insurance.id}`}
-            >
-              <Buyflow insurance={insurance} />
-            </Route>
+              component={BuyPage}
+            />
           ))}
           <Route path="/">
             <p>Welcome to Getsafe's Insurances:</p>
-            {insturances.map((insurance) => (
+            {insurances.map((insurance) => (
               <p key={`insurance-link-${insurance.id}`}>
                 <Link to={`/buy/${insurance.name}`}>{insurance.title}</Link>
               </p>
