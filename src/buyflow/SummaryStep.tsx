@@ -11,6 +11,11 @@ const SummaryStep: React.FC<SummaryStepProps> = (props) => {
       <h2>Summary:</h2>
       <div>Email: {props.collectedData.email}</div>
       <div>Age: {props.collectedData.age}</div>
+      {props.collectedData.firstname && (
+        <div className="firstname">
+          Firstname: {props.collectedData.firstname}
+        </div>
+      )}
       {props.collectedData.lastname && (
         <div className="lastname">Lastname: {props.collectedData.lastname}</div>
       )}

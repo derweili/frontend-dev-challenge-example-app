@@ -47,3 +47,26 @@ test('should not render lastname if not provided data', () => {
 
   expect(lastnameElement).not.toBeInTheDocument()
 })
+
+test('should render firstname if provided data', () => {
+  const { container } = render(
+    <SummaryStep collectedData={{ ...testCollectedData, firstname: 'Doe' }} />
+  )
+
+  const firstnameElement = container.querySelector('.firstname')
+
+  const firstname = screen.getByText(`Firstname: Doe`)
+
+  expect(firstnameElement).toBeInTheDocument()
+  expect(firstname).toBeInTheDocument()
+})
+
+test('should not render firstname if not provided data', () => {
+  const { container } = render(
+    <SummaryStep collectedData={testCollectedData} />
+  )
+
+  const firstnameElement = container.querySelector('.firstname')
+
+  expect(firstnameElement).not.toBeInTheDocument()
+})

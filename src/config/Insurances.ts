@@ -16,7 +16,7 @@ const insturances: Insurance[] = [
     id: 2,
     title: 'Designer Insurance',
     name: 'insurance_designer',
-    steps: ['email', 'age', 'lastname', 'summary'],
+    steps: ['email', 'age', 'firstname', 'lastname', 'summary'],
   },
 ]
 
