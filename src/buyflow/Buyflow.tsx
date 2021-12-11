@@ -21,7 +21,7 @@ const Buyflow: React.FC<BuyflowProps> = (props) => {
   const [currentStep, setStep] = useState('email')
   const [collectedData, updateData] = useState<CollectedData>({
     email: '',
-    age: 0
+    age: 0,
   })
   const getStepCallback = () => (field: string, value: any) => {
     updateData({ ...collectedData, [field]: value })

@@ -14,14 +14,17 @@ const App = () => {
         </header>
         <Switch>
           {insturances.map((insurance) => (
-            <Route path={`/buy/${insurance.name}`}>
+            <Route
+              path={`/buy/${insurance.name}`}
+              key={`insurance-route-${insurance.id}`}
+            >
               <Buyflow insurance={insurance} />
             </Route>
           ))}
           <Route path="/">
             <p>Welcome to Getsafe's Insurances:</p>
             {insturances.map((insurance) => (
-              <p>
+              <p key={`insurance-link-${insurance.id}`}>
                 <Link to={`/buy/${insurance.name}`}>{insurance.title} !</Link>
               </p>
             ))}
