@@ -11,6 +11,7 @@
     "@types/react": "17.0.3",
     "@types/react-dom": "^16.9.8",
     "@types/react-router-dom": "^5.1.6",
+    "eslint-plugin-cypress": "^2.12.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
@@ -25,13 +26,16 @@
     "eject": "react-scripts eject",
     "prettier": "prettier --write .",
     "lint": "eslint ./ --ext ts,tsx,js --cache",
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest",
-      "eslint:recommended"
+      "eslint:recommended",
+      "plugin:cypress/recommended"
     ]
   },
   "browserslist": {
@@ -47,6 +51,7 @@
     ]
   },
   "devDependencies": {
+    "cypress": "^9.1.1",
     "prettier": "^2.2.1"
   },
   "keywords": [],
