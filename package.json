@@ -25,7 +25,9 @@
     "eject": "react-scripts eject",
     "prettier": "prettier --write .",
     "lint": "eslint ./ --ext ts,tsx,js --cache",
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
   },
   "eslintConfig": {
     "extends": [
@@ -47,6 +49,7 @@
     ]
   },
   "devDependencies": {
+    "cypress": "^9.1.1",
     "prettier": "^2.2.1"
   },
   "keywords": [],
