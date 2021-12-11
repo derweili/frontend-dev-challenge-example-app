@@ -5,7 +5,7 @@ interface AgeStepProps {
 }
 
 const AgeStep: React.FC<AgeStepProps> = (props) => {
-  const [age, setAge] = useState(0)
+  const [age, setAge] = useState(18)
 
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault()
